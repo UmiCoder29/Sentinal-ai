@@ -6,11 +6,17 @@ from sql_scanner.reporter import generate_report, console
 
 def main():
     parser = argparse.ArgumentParser(description="Offline SQL Injection Scanner")
-    parser.add_argument("path", help="Path to the codebase to scan", default=".", nargs="?")
+    parser.add_argument("path", help="Path to the codebase to scan", default=".", nargs="*")
     
     args = parser.parse_args()
 
-    target_path = os.path.abspath(args.path)
+    # Handle paths with spaces by joining nargs="*" arguments
+    if isinstance(args.path, list):
+        path_str = " ".join(args.path) if args.path else "."
+    else:
+        path_str = args.path
+
+    target_path = os.path.abspath(path_str)
     if not os.path.exists(target_path):
         console.print(f"[bold red]Error:[/bold red] Path '{target_path}' does not exist.")
         sys.exit(1)
