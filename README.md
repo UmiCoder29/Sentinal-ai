@@ -4,7 +4,7 @@ Sentinal is a learning project and work in progress. It is not production-ready 
 
 Sentinel is a lightweight, offline static analysis tool designed to find potential SQL Injection vulnerabilities in Python codebases. It uses Abstract Syntax Trees (AST) to identify unsafe patterns where user input might be directly concatenated into SQL queries.
 
-## 🚀 Features
+##  Features
 
 - **Static Code Analysis**: Scans `.py` files without executing the code.
 - **Deep Pattern Matching**: Detects unsafe f-strings, `.format()` calls, `%` formatting, and string concatenation in SQL queries.
@@ -12,7 +12,7 @@ Sentinel is a lightweight, offline static analysis tool designed to find potenti
 - **Detailed Reporting**: Provides console summaries with file locations, code snippets, and remediation advice.
 - **Smart CLI**: Handles file paths with spaces automatically.
 
-## 🛠️ Installation
+##  Installation
 
 Ensure you have Python installed and the required dependencies:
 
@@ -20,7 +20,7 @@ Ensure you have Python installed and the required dependencies:
 pip install rich
 ```
 
-## 📖 How to Use
+##  How to Use
 
 Run the scanner from the project root directory.
 
@@ -44,7 +44,7 @@ python -m sql_scanner My Project Folder
 python -m sql_scanner "C:\Users\Name\My Project"
 ```
 
-## 🔍 What it Detects
+##  What it Detects
 
 Sentinel looks for common "Red Flags" in your database code:
 
@@ -53,7 +53,7 @@ Sentinel looks for common "Red Flags" in your database code:
 3.  **Unsafe Formatting**: `query.format(val)` or `query % val` used for SQL statements.
 4.  **Injection Signatures**: Common attack patterns like `OR '1'='1'`, `UNION SELECT`, and `SLEEP()`.
 
-## 📄 Output
+##  Output
 
 The tool provides a structured table in your terminal showing:
 - **Severity**: How dangerous the finding is.
