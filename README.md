@@ -1,5 +1,7 @@
 # Sentinel SQL Scanner
 
+Sentinal is a learning project and work in progress. It is not production-ready and should not be used as your only security tool.
+
 Sentinel is a lightweight, offline static analysis tool designed to find potential SQL Injection vulnerabilities in Python codebases. It uses Abstract Syntax Trees (AST) to identify unsafe patterns where user input might be directly concatenated into SQL queries.
 
 ## 🚀 Features
